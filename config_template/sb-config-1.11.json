@@ -27,7 +27,7 @@
       "servers": [
         {
           "tag": "google",
-          "address": "tls://8.8.8.8"
+          "address": "tcp://8.8.8.8"
         },
         {
           "tag": "local",
@@ -77,7 +77,7 @@
             }
           ],
           "server": "google",
-          "client_subnet": "114.114.114.114/24"
+          "client_subnet": "119.29.29.29/24"
         },
         {
           "query_type": [
@@ -442,12 +442,13 @@
           "outbound": "Proxy"
         },
         {
-          "domain": [
-            "clash.razord.top",
-            "yacd.metacubex.one",
-            "yacd.haishan.me",
-            "d.metacubex.one"
-          ],
+        "domain_keyword": [
+          "clash.razord.top",
+          "yacd.metacubex.one",
+          "yacd.haishan.me",
+          "d.metacubex.one",
+		  "closeai.ltd"
+        ],
           "outbound": "direct"
         },
         {
@@ -455,11 +456,15 @@
           "outbound": "direct"
         },
         {
-          "rule_set": "geosite-openai",
+                {
+        "rule_set": [
+		"geosite-openai",
+          "geosite-github"
+],
           "outbound": "OpenAI"
         },
         {
-          "rule_set": ["geosite-youtube", "geoip-google", "geosite-google", "geosite-github"],
+          "rule_set": ["geosite-youtube", "geoip-google", "geosite-google"],
           "outbound": "Google"
         },
         {
