@@ -27,16 +27,12 @@
       "servers": [
         {
           "tag": "google",
-      "type": "tcp",
-      "server": "1.1.1.1",
-      "server_port": 53,
-	"detour": "proxy"
+      "address": "tcp://1.1.1.1",
+	"detour": "Proxy"
         },
         {
           "tag": "local",
-                "type": "quic",
-      "server": "223.5.5.5",
-      "server_port": 853,
+      "address": "quic://223.5.5.5:853",
           "detour": "direct"
         },
         {
@@ -46,7 +42,7 @@
       ],
       "rules": [
         {
-          "outbound": "google",
+          "outbound": "any",
           "server": "local"
         },
         {
@@ -399,10 +395,6 @@
           "outbound": "Netflix"
         },
         {
-          "rule_set": "geosite-disney",
-          "outbound": "Disney+"
-        },
-        {
           "rule_set": ["geoip-apple", "geosite-apple", "geosite-amazon"],
           "outbound": "Apple"
         },
@@ -502,13 +494,6 @@
           "type": "remote",
           "format": "binary",
           "url": "https://ghproxy.cn/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/netflix.srs",
-          "download_detour": "direct"
-        },
-        {
-          "tag": "geosite-disney",
-          "type": "remote",
-          "format": "binary",
-          "url": "https://ghproxy.cn/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/disney.srs",
           "download_detour": "direct"
         },
         {
