@@ -374,7 +374,7 @@
         },
                 {
         "rule_set": [
-		"geosite-category-ai-chat-!cn"
+		"geosite-category-ai-chat-!cn","geosite-github"
 ],
           "outbound": "AI"
         },
